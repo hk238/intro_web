@@ -1,0 +1,54 @@
+.background{
+
+
+
+
+}
+
+
+h1{
+    display: flex;
+    justify-content: center;
+    font-size: larger;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+nav ul li{
+    flex-direction: row;
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bolder;
+}
+
+nav ul li a:hover{
+    color: rgb(223, 42, 42);
+    transition: .2s;
+}
+
+
+.intro {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-top: 5%;
+}
+
+
+.image {
+    width:30%;
+}
+
+.prac{
+    font-size: larger;
+}
