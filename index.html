@@ -1,0 +1,78 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+
+
+
+
+
+<body>
+    <div id="display" class = "display-box">
+        <div id="hello" class="alert-box">
+            <div id ='alertMessage'>
+            알림창
+            </div>
+
+
+
+        <div class = 'closeButton'>
+            <button
+           onclick="alertBoxDisplay(document.getElementById('display').style)" id="alert">
+            x
+            </button>
+        </div>
+
+        </div>
+    </div>
+    <button onclick="alertBoxDisplay(document.getElementById('display').style)" id="alert">
+        o
+    </button>
+
+
+
+
+
+
+
+
+
+    <script>
+        function alertBoxDisplay(style) {
+            console.log("working")
+            if (style.display == "block") {
+                style.display = "none";
+            }
+            else {
+                style.display = 'block';
+            }
+        }
+
+
+
+        // document.getElementById('hello').innerHTML = 'hi';
+
+
+
+    </script>
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
