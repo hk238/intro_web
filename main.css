@@ -52,3 +52,24 @@ nav ul li a:hover{
 .prac{
     font-size: larger;
 }
+
+
+
+
+.graph {
+    width: 50%;
+
+
+    display: flex;
+}
+
+
+.monthlyGoal {
+    display: none;
+}
+
+
+
+.monthlyProgress {
+    display: none;
+}
