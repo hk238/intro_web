@@ -1,7 +1,7 @@
 
 
 var goalData = {
-    js: 12,
+    js: 99,
     webpage: 19,
     machineLearning: 3,
     English: 5,
@@ -85,7 +85,7 @@ function openBox(className) {
 }
 
 function submitValue(textBox){
-    var newValue = $('#'+textBox).val();
+    var newValue =  $(`#${textBox}`).val();
     // goalList.push(newValue);
     console.log(newValue);
     goalData[newValue] = 0;
@@ -109,6 +109,13 @@ function submitprogress(idName) {
     var selectedGoal = document.getElementById(idName).value;
     if (selectedGoal in goalData) {
         goalData[selectedGoal] += 10;
+        if (goalData[selectedGoal] >= 100){
+            addAccomItem(selectedGoal);
+            delete goalData[selectedGoal];
+            myChart.data.labels = Object.keys(goalData);
+        }
+        console.log(goalData);
+
         myChart.data.datasets[0].data= Object.values(goalData);
         myChart.update();
         $('#monthlyProgress').css('display','none');
@@ -120,4 +127,16 @@ function submitprogress(idName) {
 }
 
 
+
+function addAccomItem (goalData){
+    console.log("working");
+    var newAccomLi = $('<li></li>').text(goalData).css(
+        {
+            'list-style': 'none',
+            'font-weight': 'bolder'
+        }
+    );
+    $('#goalsCompleted').append(newAccomLi);
+
+}
 

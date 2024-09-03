@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -22,40 +23,61 @@
         </ul>
 
     </nav>
-   
 
 
 
 
 
 
-    <!-- grpha -->
-    <canvas id="myChart" class="graph"></canvas>
+    <div class='grid-container'>
 
-    <!-- adding goal -->
-    <div id="monthlyGoalAdd" class ='monthlyGoal'>
+        <div class='grid-item'>
+            <!-- grpha -->
+            <canvas id="myChart" class="graph"></canvas>
+
+            <!-- adding goal -->
+            <div id="monthlyGoalAdd" class='monthlyGoal'>
 
 
-        <input id="textBox1"></input>
-        <button onclick="submitValue('textBox1')"    id="submitButton">submit</button>
+                <input id="textBox1"></input>
+                <button onclick="submitValue('textBox1')" id="submitButton">submit</button>
+
+            </div>
+            <button onclick="openBox('monthlyGoal')"> add goal </button>
+
+
+
+            <!-- adding progress -->
+            <div id="monthlyProgress" class='monthlyProgress'>
+
+                <select name="example" id="goalSelect"></select>
+
+                <button onclick="submitprogress('goalSelect')" id="submitButton">submit</button>
+
+            </div>
+            <button onclick="openBox('monthlyProgress')"> add progress </button>
+        </div>
+
+
+        <div class="grid-item">
+            <h1> Accomplished Goals</h1>
+            <ul id='goalsCompleted'>
+                
+                
+            </ul>
+
+        </div>
+
+
 
     </div>
-    <button onclick="openBox('monthlyGoal')"> add goal </button>
 
 
 
-    <!-- adding progress -->
-    <div id="monthlyProgress" class ='monthlyProgress'>
-
-        <select name="example" id="goalSelect"></select>
-
-        <button onclick="submitprogress('goalSelect')"    id="submitButton">submit</button>
-
-    </div>
-    <button onclick="openBox('monthlyProgress')"> add progress </button>
 
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
     <script src="trackerScript.js"></script>
 
@@ -69,7 +91,7 @@
 
 
 
-   
+
 
 </script>
 
