@@ -45,6 +45,10 @@ var goalData = {
     // ⑩차트의 설정(Object)
     options: {
         plugins: {
+            tooltip: {
+                enabled: true,
+                backgroundColor: '#ff4081', // 툴팁 배경색
+            },
             title: {
                 display: true,
                 text: 'monthly goal'
@@ -63,10 +67,20 @@ var goalData = {
     }
 });
 
-labels.forEach(element => {
-    var newOption = $('<option></option>').text(element);
+
+
+for( let key in goalData) {
+    var newOption = $('<option></option>').text(key).attr('id', `${key}`);
     $('#goalSelect').append(newOption);
-});
+}
+
+
+
+
+// labels.forEach(element => {
+//     var newOption = $('<option></option>').text(element);
+//     $('#goalSelect').append(newOption);
+// });
 
 
 
@@ -94,7 +108,7 @@ function submitValue(textBox){
     
     $('#monthlyGoalAdd').css('display', 'none');
     $('#'+textBox).val('');
-    var newOption = $('<option></option>').text(newValue);
+    var newOption = $('<option></option>').text(newValue).attr('id', `${newValue}`);
     $('#goalSelect').append(newOption);
 
     console.log(myChart);
@@ -112,6 +126,9 @@ function submitprogress(idName) {
         if (goalData[selectedGoal] >= 100){
             addAccomItem(selectedGoal);
             delete goalData[selectedGoal];
+            console.log(selectedGoal)
+            console.log($(`#${selectedGoal}`));
+            $(`#${selectedGoal}`).remove();
             myChart.data.labels = Object.keys(goalData);
         }
         console.log(goalData);
