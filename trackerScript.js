@@ -44,25 +44,39 @@ var goalData = {
     },
     // ⑩차트의 설정(Object)
     options: {
+        indexAxis: 'y',
         plugins: {
+            
             tooltip: {
                 enabled: true,
                 backgroundColor: '#ff4081', // 툴팁 배경색
             },
             title: {
                 display: true,
-                text: 'monthly goal'
+                text: 'monthly goal',
+                font: {
+                    size: 18, 
+                    weight: 'bold'
+                }
             }
         }
         ,
         responsive: false,
-        // ⑪축에 관한 설정(Object)
+
         scales: {
-            // ⑫y축에 대한 설정(Object)
             y: {
-                // ⑬시작을 0부터 하게끔 설정(최소값이 0보다 크더라도)(boolean)
                 beginAtZero: true
+            },
+            x: {
+                grid: {
+                    display: false ,
+                    drawBorder: false, // 테두리 그리드 라인 없앰
+                }
             }
+        },
+        animation: {
+            duration: 1000, // 애니메이션 지속 시간
+            easing: 'easeInOutQuart' // 애니메이션 효과
         }
     }
 });

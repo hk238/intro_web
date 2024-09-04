@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Heonjae's Website</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -35,37 +35,41 @@
             <!-- grpha -->
             <canvas id="myChart" class="graph"></canvas>
 
-            <!-- adding goal -->
-            <div id="monthlyGoalAdd" class='monthlyGoal'>
 
 
-                <input id="textBox1"></input>
-                <button onclick="submitValue('textBox1')" id="submitButton">submit</button>
+            
+            <div class="openBox-container">
+                <!-- adding goal -->
+                <button onclick="openBox('monthlyGoal')"> add goal </button>
 
+
+
+                <!-- adding progress -->
+                <button onclick="openBox('monthlyProgress')"> add progress </button>
             </div>
-            <button onclick="openBox('monthlyGoal')"> add goal </button>
 
 
+            <!-- goal & progress boxes -->
+            <div class="input-submit-boxes-container">
+                <div id="monthlyGoalAdd" class='monthlyGoal'>
+                    <input id="textBox1" type="text" />
+                    <button onclick="submitValue('textBox1')" id="submitButton">submit</button>
+                </div>
 
-            <!-- adding progress -->
-            <div id="monthlyProgress" class='monthlyProgress'>
-
-                <select name="example" id="goalSelect"></select>
-
-                <button onclick="submitprogress('goalSelect')" id="submitButton">submit</button>
-
+                <div id="monthlyProgress" class='monthlyProgress'>
+                    <select name="example" id="goalSelect"></select>
+                    <button onclick="submitprogress('goalSelect')" id="submitButton">submit</button>
+                </div>
             </div>
-            <button onclick="openBox('monthlyProgress')"> add progress </button>
+
         </div>
 
 
-        <div class="grid-item">
-            <h1> Accomplished Goals</h1>
-            <ul id='goalsCompleted'>
-                
-                
-            </ul>
 
+
+        <div class="grid-item">
+            <h1 class="accomTitle"> Accomplished Goals</h1>
+            <ul id='goalsCompleted'></ul>
         </div>
 
 
