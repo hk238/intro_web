@@ -5,6 +5,10 @@ var goalData = {
     interviewPrac: 2
 };
 
+
+
+
+
 $(document).ready(function () {
 
 
@@ -85,11 +89,14 @@ $(document).ready(function () {
 
 
 
+
+
+
+
     for (let key in goalData) {
         var newOption = $('<option></option>').text(key).attr('id', `${key}`);
         $('#goalSelect').append(newOption);
     }
-
 
 
 
@@ -108,13 +115,15 @@ $(document).ready(function () {
 
 
 
-    function openBox(className) {
+
+
+    window.openBox = function(className) {
         console.log('.' + className);
         // document.getElementById(className).style.display = 'block';
         $('.' + className).css('display', 'block');
     }
 
-    function submitValue(textBox) {
+    window.submitValue = function(textBox) {
         var newValue = $(`#${textBox}`).val();
         // goalList.push(newValue);
         console.log(newValue);
@@ -135,7 +144,7 @@ $(document).ready(function () {
     }
 
 
-    function submitprogress(idName) {
+    window.submitprogress = function(idName) {
         var selectedGoal = document.getElementById(idName).value;
         if (selectedGoal in goalData) {
             goalData[selectedGoal] += 10;
@@ -176,7 +185,6 @@ $(document).ready(function () {
 
 
 
-
     // 1. API에서 유저 리스트 가져오기 (GET 요청)
     $.ajax({
         url: 'http://localhost:8080/users',
@@ -202,32 +210,34 @@ $(document).ready(function () {
         }
     });
 
-    // 2. 새로운 유저 추가 (POST 요청)
-    // $('#userForm').submit(function(event) {
-    //     event.preventDefault();
-    //     var name = $('#name').val();
-    //     var email = $('#email').val();
-
-    //     $.ajax({
-    //         url: 'http://localhost:8080/api/users',
-    //         type: 'POST',
-    //         contentType: 'application/json',
-    //         data: JSON.stringify({ name: name, email: email }),
-    //         success: function(newUser) {
-    //             $('#usersTable tbody').append(
-    //                 '<tr><td>' + newUser.id + '</td><td>' + newUser.name + '</td><td>' + newUser.email + '</td></tr>'
-    //             );
-    //             // 폼을 초기화
-    //             $('#name').val('');
-    //             $('#email').val('');
-    //         },
-    //         error: function(err) {
-    //             console.log("Error: ", err);
-    //         }
-    //     });
-    // });
-
-
 
 
 });
+
+
+// 2. 새로운 유저 추가 (POST 요청)
+// $('#userForm').submit(function(event) {
+//     event.preventDefault();
+//     var name = $('#name').val();
+//     var email = $('#email').val();
+
+//     $.ajax({
+//         url: 'http://localhost:8080/api/users',
+//         type: 'POST',
+//         contentType: 'application/json',
+//         data: JSON.stringify({ name: name, email: email }),
+//         success: function(newUser) {
+//             $('#usersTable tbody').append(
+//                 '<tr><td>' + newUser.id + '</td><td>' + newUser.name + '</td><td>' + newUser.email + '</td></tr>'
+//             );
+//             // 폼을 초기화
+//             $('#name').val('');
+//             $('#email').val('');
+//         },
+//         error: function(err) {
+//             console.log("Error: ", err);
+//         }
+//     });
+// });
+
+
