@@ -203,7 +203,7 @@ $(document).ready(function () {
 
         var selectedGoal = $(`#${idName}`).val();
         var selectedGoalId = $(`#${idName} option:selected`).attr('id');
-
+        var doPatch = true;
         
 
 
@@ -211,7 +211,7 @@ $(document).ready(function () {
             goalData[selectedGoalId][selectedGoal] +=10;
             
             if (goalData[selectedGoalId][selectedGoal] >= 100) {
-                var doPatch = false;
+                doPatch = false;
                 //add to accomplished list
                 addAccomItem(selectedGoal);
                 //remove from graph, and object
